@@ -1,0 +1,7 @@
+<div class="temperatur">
+  <h5>{{ selected.weather.title }}</h5>
+  <span class="w-line"> </span>
+  <span class="cloud" [ngStyle]="{'background-image': 'url(' + selected.weather.icon +')'}"> </span>
+  <h2>{{ selected.weather.temperature }}<sup class="degree">°</sup></h2>
+  <h6>Water {{ selected.weather.water }}<sup class="degree">°</sup></h6>
+</div>

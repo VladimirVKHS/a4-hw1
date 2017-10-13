@@ -1,0 +1,24 @@
+<div class="element-left">
+  <div class="element-bg-img"><img [src]="selected.img" alt="" class="img-responsive"> </div>
+  <div class="element-left-bottom">
+    <div class="ele-strip">
+      <ul>
+        <li *ngFor="let resortType of resortTypes" [ngClass]="{'active' : (resortType._id === filter?._id)}">
+          <a href="#" (click)="setFilter(resortType)" >{{ resortType.name }}</a>
+        </li>
+        <li [ngClass]="{'active' : (filter == null)}">
+          <a href="#" (click)="setFilter(null)">All</a>
+        </li>
+      </ul>
+    </div>
+    <div class="village">
+      <h3>Righteous indignation & like</h3>
+      <span class="line"> </span>
+      <div class="activity_box">
+        <div class="scrollbar" id="style-2">
+          <app-activity-row *ngFor="let resort of resorts$$ | async | resortTypeFilter:filter" [resort]="resort" (click)="select(resort)"></app-activity-row>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
